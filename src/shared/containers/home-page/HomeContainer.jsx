@@ -1,6 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import HomeAction from '../../../redux/home/action'
+import { Button } from '@mui/material'
+import styles from './HomeContainer.module.scss'
 const HomeContainer = () => {
     const dispatch = useDispatch()
     const handleClick = () => {
@@ -12,9 +14,12 @@ const HomeContainer = () => {
     return (
         <div>
             Welcome to InnSight Homepage ....
-            <button onClick={handleClick}>
-                Test redux
-            </button>
+            <Button
+                className={styles['custom-button']}
+                onClick={handleClick}
+                variant="contained">
+                test redux
+            </Button>
         </div>
     )
 }
