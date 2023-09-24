@@ -1,7 +1,8 @@
-import React from 'react'
+import styles from './HomeContainer.module.scss'
 const HomeContainer = () => {
+
     return (
-        <div>
+        <div className={`${styles['home']}`}>
             Welcome to InnSight Homepage ....
         </div>
     )
