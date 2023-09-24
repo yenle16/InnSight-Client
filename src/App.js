@@ -2,7 +2,6 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { publicRoutes } from './routes/MainRouter';
-// import store from './redux/store';
 import initStore from './redux/store';
 import "./Common.scss";
 const store = initStore()
