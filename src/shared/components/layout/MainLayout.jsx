@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import styles from './MainLayout.module.scss';
+import Navbar from '../navbar/Navbar';
 const MainLayout = ({ children }) => {
     return (
         <div className='flex flex-col'>
             <div className='w-full'>
-                <Header />
+                <Navbar />
             </div>
 
             <div className={`${styles['content']} w-full`}>
