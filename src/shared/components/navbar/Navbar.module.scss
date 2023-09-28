@@ -1,6 +1,6 @@
 @import '../../../Common.scss';
 
-.header {
+.navbar {
     width: 100%;
     background-color: $blue-light !important;
     height: 70px;
@@ -27,7 +27,7 @@
         }
     }
 
-    .header-button {
+    .navbar-button {
         width: 130px;
         height: 45px;
         padding: 11px !important;

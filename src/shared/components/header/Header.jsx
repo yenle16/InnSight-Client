@@ -7,6 +7,7 @@ import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import imgBg from '../../../assets/images/header-background.png'
 const Header = () => {
   const [destination, setDestination] = useState('')
   const [openDate, setOpenDate] = useState(false)
@@ -44,8 +45,10 @@ const Header = () => {
   }
   return (
     <header >
-      <div className={styles['header-image']}></div>
-      <div className={`${styles['header-search']}`}>
+      <div className={` ${styles['header-image']}`}>
+        <img src={imgBg} alt="" />
+      </div>
+      <div className={`hidden md:flex ${styles['header-search']}`}>
         <div className={`${styles['header-search-item']} flex items-center`}>
           <IcLocation />
           <div className={`${styles['search-item-right']} flex flex-col ml-2`}>
@@ -83,7 +86,6 @@ const Header = () => {
           </div>
         </div>
         <div
-
           className={`${styles['header-search-item']} flex items-center`}>
           <div className={`${styles['search-item-right']} flex flex-col ml-2`}>
             <span className={styles['item-label']} onClick={() => setOpenOptions(!openOptions)}>Số khách</span>

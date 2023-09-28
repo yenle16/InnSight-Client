@@ -8,14 +8,14 @@ import IcAvatar from '../icons/header-icons/IcAvatar'
 import IcPencil from '../icons/header-icons/IcPencil'
 const Navbar = () => {
     return (
-        <header className={`hidden md:flex ${styles['header']}`}>
+        <div className={`hidden lg:flex  ${styles['navbar']}`}>
             <Link
                 to={'/'}
                 className={`flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8 ${styles['logo-text']}`}>
                 InnSight
             </Link>
-            <nav className="contents text-base lg:text-lg mr-auto">
-                <div className={`flex items-center justify-center`}>
+            <nav className="contents text-base md:text-sm lg:text-lg mr-auto">
+                <div className={`flex items-center justify-center md:text-xs lg:text-lg`}>
                     {/* <li className=""> */}
                     <Link
                         className={`${styles['nav-item']}`}
@@ -29,7 +29,7 @@ const Navbar = () => {
                         className={`${styles['nav-item']}`}
                         to={'/home'}>
                         <IcSell />
-                        <span>Ưu đãi</span>
+                        <span className>Ưu đãi</span>
                     </Link>
                     {/* </li> */}
                     {/* <li className="p-3 xl:p-6"> */}
@@ -43,17 +43,17 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            <div className="flex items-center px-4 lg:px-6 xl:px-8">
-                <button class={`py-2 px-4 drop-shadow-md inline-flex items-center justify-between ${styles['header-button']}`}>
+            <div className="flex items-center md:px-4 lg:px-6 xl:px-8">
+                <button className={`py-2 px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
                     <IcAvatar />
                     <span>Đăng nhập</span>
                 </button>
-                <button class={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles['header-button']}`}>
+                <button className={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
                     <IcPencil />
                     <span>Đăng ký</span>
                 </button>
             </div>
-        </header>
+        </div>
     )
 }
 

@@ -6,12 +6,15 @@ header {
 }
 
 .header-image {
-    background-image: url('../../../assets//images/header-background.png');
+    // background-image: url('../../../assets//images/header-background.png');
     width: 100%;
-    height: 460px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    height: 450px;
+    overflow: hidden;
+    img {
+        transform: scale(1.3);
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .header-search {
