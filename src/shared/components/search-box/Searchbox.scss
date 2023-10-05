@@ -1,0 +1,20 @@
+@import "../../../Common.scss";
+
+.box-wrapper {
+    overflow: hidden;
+
+    .css-1ynbdvp-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+        border-radius: $border-radius;
+    }
+
+    .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+    .css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+        display: none;
+    }
+
+    .css-kmspea-MuiFormHelperText-root {
+        color: $textColor;
+        font-weight: $font-weight-bold;
+        font-size: 14px;
+    }
+}

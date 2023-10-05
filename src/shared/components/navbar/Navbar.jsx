@@ -15,31 +15,27 @@ const Navbar = () => {
                 InnSight
             </Link>
             <nav className="contents text-base md:text-sm lg:text-lg mr-auto">
-                <div className={`flex items-center justify-center md:text-xs lg:text-lg`}>
-                    {/* <li className=""> */}
+                <div className={`grid grid-cols-3 gap-1 items-center`}>
                     <Link
                         className={`${styles['nav-item']}`}
                         to={'/home'}>
                         <IcHotel />
-                        <span>Lưu trú</span>
+                        <span className='ml-1'>Lưu trú</span>
                     </Link>
-                    {/* </li> */}
-                    {/* <li className="p-3 xl:p-"> */}
+
                     <Link
                         className={`${styles['nav-item']}`}
                         to={'/home'}>
                         <IcSell />
-                        <span className>Ưu đãi</span>
+                        <span className='ml-1'>Ưu đãi</span>
                     </Link>
-                    {/* </li> */}
-                    {/* <li className="p-3 xl:p-6"> */}
+
                     <Link
                         className={`${styles['nav-item']}`}
                         to={'/home'}>
                         <IcGroup />
-                        <span>Hợp tác với chúng tôi</span>
+                        <span className='ml-1'>Hợp tác với chúng tôi</span>
                     </Link>
-                    {/* </li> */}
                 </div>
             </nav>
 

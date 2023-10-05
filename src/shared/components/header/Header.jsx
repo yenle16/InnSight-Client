@@ -2,13 +2,18 @@ import styles from './Header.module.scss';
 import IcLocation from '../icons/header-icons/IcLocation';
 import IcCalendar from '../icons/header-icons/IcCalendar';
 import IcGlass from '../icons/header-icons/IcGlass'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
+import { useNavigate } from 'react-router-dom';
+import useOnClickOutside from '../../../hooks/use-click-outside'
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import imgBg from '../../../assets/images/header-background.png'
 const Header = () => {
+  const dateRef = useRef(null);
+  const optionRef = useRef(null);
+  const navigate = useNavigate();
   const [destination, setDestination] = useState('')
   const [openDate, setOpenDate] = useState(false)
   const [date, setDate] = useState([
@@ -41,8 +46,15 @@ const Header = () => {
       },
       options: options
     }
+    navigate('/searchresults')
     console.log(filter)
   }
+  useOnClickOutside(dateRef, () => {
+    setOpenDate(false);
+  });
+  useOnClickOutside(optionRef, () => {
+    setOpenOptions(false);
+  });
   return (
     <header >
       <div className={` ${styles['header-image']}`}>
@@ -54,14 +66,14 @@ const Header = () => {
           <div className={`${styles['search-item-right']} flex flex-col ml-2`}>
             <span className={styles['item-label']}>Điểm đến</span>
             <input
-              className='focus:outline-none'
+              className='focus:outline-none border-none'
               placeholder='Nhập điểm đến'
               onChange={(e) => setDestination(e.target.value)}
               type="text" />
           </div>
         </div>
-        <div className={`${styles['header-search-item']}`}>
-          <div className='flex items-center h-full' onClick={() => { setOpenDate(!openDate) }}>
+        <div className={`${styles['header-search-item']}`} ref={dateRef}>
+          <div className='flex items-center h-full' onClick={() => { setOpenDate(!openDate) }} style={{ cursor: "pointer" }}>
             <IcCalendar />
             <div
               className={`flex justify-between w-full`}>
@@ -86,9 +98,10 @@ const Header = () => {
           </div>
         </div>
         <div
+          ref={optionRef}
           className={`${styles['header-search-item']} flex items-center`}>
-          <div className={`${styles['search-item-right']} flex flex-col ml-2`}>
-            <span className={styles['item-label']} onClick={() => setOpenOptions(!openOptions)}>Số khách</span>
+          <div className={`${styles['search-item-right']} flex flex-col ml-2`} >
+            <span className={styles['item-label']} onClick={() => setOpenOptions(!openOptions)} style={{ cursor: "pointer" }}>Số khách</span>
             <div
               className={styles['header-search-text']}>
               {`${options.adult} người lớn · ${options.children} trẻ em · ${options.room} phòng`}
@@ -159,8 +172,6 @@ const Header = () => {
                   </div>
                 </div>}
             </div>
-            {/* ádfsaf */}
-
           </div>
         </div>
         <div className={`${styles['header-search-submit']} flex items-center`} onClick={handleSubmit}>

@@ -10,6 +10,7 @@ header {
     width: 100%;
     height: 450px;
     overflow: hidden;
+
     img {
         transform: scale(1.3);
         width: 100%;
@@ -44,6 +45,7 @@ header {
             width: 100%;
 
             .item-label {
+               
                 font-weight: $font-weight-bold;
             }
         }

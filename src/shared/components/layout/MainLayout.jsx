@@ -15,7 +15,6 @@ const MainLayout = ({ children }) => {
             <div className='w-full'>
                 <Footer />
             </div>
-
         </div>
     )
 }

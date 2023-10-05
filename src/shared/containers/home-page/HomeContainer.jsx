@@ -86,46 +86,19 @@ const HomeContainer = () => {
                 <div className={styles['content-block']}>
                     <div className={styles['content-title']}>Điểm đến thịnh hành</div>
                     <div className={`${styles['content']}`}>
-                        <div className="grid grid-cols-12 gap-4">
-                            {/* <div
-                                onClick={() => getHotelInCity(city[0].name)}
-                                className={`${styles['grid-item']} col-span-6`}>
-                                <span>{city[0].name}</span>
-                                <img src={city[0].img} alt={city[0].name} />
-                            </div>
-                            <div
-                                onClick={() => getHotelInCity(city[1].name)}
-                                className={`${styles['grid-item']} col-span-6`}>
-                                <span>{city[1].name}</span>
-                                <img src={city[1].img} alt={city[1].name} />
-                            </div>
-                            <div
-                                onClick={() => getHotelInCity(city[2].name)}
-                                className={`${styles['grid-item']} col-span-4`}>
-                                <span>{city[2].name}</span>
-                                <img src={city[2].img} alt={city[2].name} />
-                            </div>
-                            <div
-                                onClick={() => getHotelInCity(city[3].name)}
-                                className={`${styles['grid-item']} col-span-4`}>
-                                <span>{city[3].name}</span>
-                                <img src={city[3].img} alt={city[3].name} />
-                            </div>
-                            <div
-                                onClick={() => getHotelInCity(city[4].name)}
-                                className={`${styles['grid-item']} col-span-4`}>
-                                <span>{city[4].name}</span>
-                                <img src={city[4].img} alt={city[4].name} />
-                            </div> */}
+                        <div className={`grid grid-cols-12 gap-4`}>
                             {city.map((cityItem, index) => (
-                                <div key={index}
+                                <div
+                                    key={index}
                                     onClick={() => getHotelInCity(cityItem.name)}
-                                    className={`${styles['grid-item']} col-span-${index < 2 ? '6' : '4'}`}>
+                                    className={`${styles['grid-item']}  ${index < 2 ? 'col-span-6' : 'col-span-4'}`}
+                                >
                                     <span>{cityItem.name}</span>
                                     <img src={cityItem.img} alt={cityItem.name} />
                                 </div>
                             ))}
                         </div>
+
                     </div>
                 </div>
                 <div className={styles['content-block']}>
@@ -136,8 +109,6 @@ const HomeContainer = () => {
                                 <div key={index}
                                     onClick={() => getHotelInCity(cityItem.name)}
                                     className={`${styles['grid-item-fav']} col-span-1}`}>
-                                    {/* <span>{cityItem.name}</span>
-                                    <img src={cityItem.img} alt={cityItem.name} /> */}
                                     <CardItem item={cityItem} />
                                 </div>
                             ))}
