@@ -1,14 +1,14 @@
-import HomePage from "../pages/home-page/HomePage";
+import QLTaiKhoan from "../pages/qltaikhoan/QLTaiKhoan";
 import MainLayout from "../shared/components/layout/MainLayout";
 const publicRoutes = [
     {
         path: '/',
-        component: HomePage,
+        component: QLTaiKhoan,
         layout: MainLayout,
     },
     {
-        path: '/home',
-        component: HomePage,
+        path: '/qltaikhoan',
+        component: QLTaiKhoan,
         layout: MainLayout,
     }
 ];

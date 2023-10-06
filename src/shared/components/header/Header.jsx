@@ -1,57 +1,29 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from './Header.module.scss'
-import IcHotel from '../icons/header-icons/IcHotel'
-import IcSell from '../icons/header-icons/IcSell'
-import IcGroup from '../icons/header-icons/IcGroup'
-import IcAvatar from '../icons/header-icons/IcAvatar'
-import IcPencil from '../icons/header-icons/IcPencil'
+import IcSearch from '../icons/header-icons/IcSearch'
+import DropdownUser from './DropdownUser.tsx';
 const Header = () => {
   return (
-    <header className={`hidden md:flex ${styles['header']}`}>
-      <Link
-        to={'/'}
-        className={`flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8 ${styles['logo-text']}`}>
-        InnSight
-      </Link>
-      <nav className="contents text-base lg:text-lg mr-auto">
-        <div className={`flex items-center justify-center`}>
-          {/* <li className=""> */}
-          <Link
-            className={`${styles['nav-item']}`}
-            to={'/home'}>
-            <IcHotel />
-            <span>Lưu trú</span>
-          </Link>
-          {/* </li> */}
-          {/* <li className="p-3 xl:p-"> */}
-          <Link
-            className={`${styles['nav-item']}`}
-            to={'/home'}>
-            <IcSell />
-            <span>Ưu đãi</span>
-          </Link>
-          {/* </li> */}
-          {/* <li className="p-3 xl:p-6"> */}
-          <Link
-            className={`${styles['nav-item']}`}
-            to={'/home'}>
-            <IcGroup />
-            <span>Hợp tác với chúng tôi</span>
-          </Link>
-          {/* </li> */}
-        </div>
-      </nav>
+    <header className="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+      <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
 
-      <div className="flex items-center px-4 lg:px-6 xl:px-8">
-        <button class={`py-2 px-4 drop-shadow-md inline-flex items-center justify-between ${styles['header-button']}`}>
-          <IcAvatar />
-          <span>Đăng nhập</span>
-        </button>
-        <button class={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles['header-button']}`}>
-          <IcPencil />
-          <span>Đăng ký</span>
-        </button>
+        <div className=" sm:block">
+          <form action="https://formbold.com/s/unique_form_id" method="POST">
+            <div className="relative">
+              <button className="absolute top-1/2 left-0 -translate-y-1/2">
+                <IcSearch />
+              </button>
+              <input
+                type="text"
+                placeholder="Tìm kiếm ....."
+                className="w-full bg-transparent pr-4 pl-9 focus:outline-none"
+              />
+            </div>
+          </form>
+        </div>
+
+        <div className="flex items-center gap-3 2xsm:gap-7">
+          <DropdownUser />
+        </div>
       </div>
     </header>
   )
