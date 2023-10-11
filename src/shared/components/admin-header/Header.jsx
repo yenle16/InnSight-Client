@@ -1,9 +1,9 @@
 import React from 'react'
-import IcSearch from '../icons/header-icons/IcSearch'
+import IcSearch from '../icons/admin-header-icons/IcSearch'
 import DropdownUser from './DropdownUser.tsx';
 const Header = () => {
   return (
-    <header className="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+    <header className="sticky top-0 z-999 flex w-full border bg-slate-300 drop-shadow-1 dark:bg-slate-300 dark:drop-shadow-none">
       <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
 
         <div className=" sm:block">
@@ -15,7 +15,7 @@ const Header = () => {
               <input
                 type="text"
                 placeholder="Tìm kiếm ....."
-                className="w-full bg-transparent pr-4 pl-9 focus:outline-none"
+                className="w-full bg-transparent pr-4 pl-9 focus:outline-none text-black"
               />
             </div>
           </form>

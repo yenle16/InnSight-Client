@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import IcProfile from './icons/sidebar-icons/IcProfile.jsx'
-import IcThongke from './icons/sidebar-icons/IcThongke.jsx'
-import IcSetting from './icons/sidebar-icons/IcSetting.jsx'
-import IcQLtaikhoan from './icons/sidebar-icons/IcQLtaikhoan.jsx'
-import IcQLdichvu from './icons/sidebar-icons/IcQLdichvu.jsx'
-import IcQLdanhmuc from './icons/sidebar-icons/IcQLdanhmuc.jsx'
+import IcProfile from '../icons/sidebar-icons/IcProfile.jsx'
+import IcThongke from '../icons/sidebar-icons/IcThongke.jsx'
+import IcSetting from '../icons/sidebar-icons/IcSetting.jsx'
+import IcQLtaikhoan from '../icons/sidebar-icons/IcQLtaikhoan.jsx'
+import IcQLdichvu from '../icons/sidebar-icons/IcQLdichvu.jsx'
+import IcQLdanhmuc from '../icons/sidebar-icons/IcQLdanhmuc.jsx'
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -131,20 +131,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 >
                   <IcThongke/>
                   Thống kế doanh thu
-                </NavLink>
-              </li>
-            </ul>
-            <ul className="mb-6 flex flex-col gap-1.5">
-              <li>
-                <NavLink
-                  to="/profile"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-slate-50 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('profile') &&
-                    'bg-cyan-900 dark:bg-cyan-900'
-                  }`}
-                >
-                  <IcProfile/>
-                  Thông tin cá nhân
                 </NavLink>
               </li>
             </ul>

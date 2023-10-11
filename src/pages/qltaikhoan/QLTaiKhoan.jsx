@@ -1,4 +1,4 @@
-import QLTaiKhoanContainer from "../../shared/containers/qltaikhoan/QLTaiKhoanContainer"
+import QLTaiKhoanContainer from "../../shared/containers/admin-qltaikhoan/QLTaiKhoanContainer"
 const QLTaiKhoan = () => {
 
     return (

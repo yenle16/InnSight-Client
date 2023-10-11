@@ -1,4 +1,4 @@
-import ThongkeContainer from "../../shared/containers/thongke/ThongkeContainer.tsx"
+import ThongkeContainer from "../../shared/containers/admin-thongke/ThongkeContainer.tsx"
 const Thongke = () => {
 
     return (

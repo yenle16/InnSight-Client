@@ -1,9 +1,10 @@
-import image from '../../../assets/images/thuyen.jpg';
+import image from '../../../assets/images/user.png';
 import React,{ useState,useEffect } from "react";
 import IcUser from '../../components/icons/setting-icons/IcUser'
 import IcEmail from '../../components/icons/setting-icons/IcEmail'
 import IcBiO from '../../components/icons/setting-icons/IcBiO'
 import IcUpload from '../../components/icons/setting-icons/IcUpload'
+import styles from './SettingContainer.module.scss'
 
 const SettingContainer = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -181,7 +182,7 @@ const SettingContainer = () => {
                 <form action="#">
                   <div className="mb-4 flex items-center gap-3">
                     <div className="h-14 w-14 rounded-full">
-                      <img src={image} alt="User" style={{borderRadius: "50%", width: "50px", height: "50px", }}/>
+                    <img src={image} alt="User" className={`${styles.image}`} />
                     </div>
                     <div>
                       <span className="mb-1.5 text-sky-900 font-bold ">

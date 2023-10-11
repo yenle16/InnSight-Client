@@ -1,4 +1,4 @@
-import SettingContainer from "../../shared/containers/caidat/SettingContainer"
+import SettingContainer from "../../shared/containers/admin-setting/SettingContainer"
 const Setting = () => {
 
     return (

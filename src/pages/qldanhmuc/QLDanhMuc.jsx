@@ -1,4 +1,4 @@
-import QLDanhMucContainer from "../../shared/containers/qldanhmuc/QLDanhMucContainer"
+import QLDanhMucContainer from "../../shared/containers/admin-qldanhmuc/QLDanhMucContainer"
 const QLDanhMuc = () => {
 
     return (

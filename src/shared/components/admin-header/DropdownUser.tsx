@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import image from '../../../assets/images/thuyen.jpg';
+import image from '../../../assets/images/user.png';
 
-import IcAvatar from '../icons/header-icons/IcAvatar';
-import IcProfile from '../icons/header-icons/IcProfile';
-import IcContact from '../icons/header-icons/IcContact';
-import IcSetting from '../icons/header-icons/IcSetting';
-import IcLogout from '../icons/header-icons/IcLogout';
+import IcAvatar from '../icons/admin-header-icons/IcAvatar';
+import IcProfile from '../icons/admin-header-icons/IcProfile';
+import IcContact from '../icons/admin-header-icons/IcContact';
+import IcSetting from '../icons/admin-header-icons/IcSetting';
+import IcLogout from '../icons/admin-header-icons/IcLogout';
 const DropdownUser = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
   
@@ -63,7 +63,7 @@ const DropdownUser = () => {
           ref={dropdown}
           onFocus={() => setDropdownOpen(true)}
           onBlur={() => setDropdownOpen(false)}
-          className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark ${
+          className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-slate-300 shadow-default dark:border-strokedark dark:bg-boxdark ${
             dropdownOpen === true ? 'block' : 'hidden'
           }`}
         >

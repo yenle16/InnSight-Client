@@ -1,4 +1,4 @@
-import QLDichVuContainer from "../../shared/containers/qldichvu/QLDichVuContainer"
+import QLDichVuContainer from "../../shared/containers/admin-qldichvu/QLDichVuContainer"
 const QLDichVu = () => {
 
     return (

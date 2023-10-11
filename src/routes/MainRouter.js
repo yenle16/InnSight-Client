@@ -1,10 +1,10 @@
+import MainLayout from "../shared/components/layout/MainLayout";
 import QLTaiKhoan from "../pages/qltaikhoan/QLTaiKhoan";
+import DetailUser from "../pages/qltaikhoan/DetailUser";
 import QLDichVu from "../pages/qldichvu/QLDichVu";
 import QLDanhMuc from "../pages/qldanhmuc/QLDanhMuc";
-import Thongke from "../pages/thongke/Thongke";
-import Profile from "../pages/profile/Profile";
-import Setting from "../pages/caidat/Setting";
-import MainLayout from "../shared/components/layout/MainLayout";
+import Thongke from "../pages/admin-thongke/Thongke";
+import Setting from "../pages/admin-setting/Setting";
 const publicRoutes = [
     {
         path: '/',
@@ -14,6 +14,11 @@ const publicRoutes = [
     {
         path: '/qltaikhoan',
         component: QLTaiKhoan,
+        layout: MainLayout,
+    },
+    {
+        path: '/qltaikhoan/detail',
+        component: DetailUser,
         layout: MainLayout,
     },
     {
@@ -29,11 +34,6 @@ const publicRoutes = [
     {
         path: '/thongke',
         component: Thongke,
-        layout: MainLayout,
-    },
-    {
-        path: '/profile',
-        component: Profile,
         layout: MainLayout,
     },
     {
