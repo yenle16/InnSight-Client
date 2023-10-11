@@ -7,7 +7,7 @@ import Select from '@mui/material/Select';
 import './Searchbox.scss';
 import Constants from '../../../utils/Contants';
 import SearchIcon from '@mui/icons-material/Search';
-import { Button, Input } from '@mui/material';
+import { Button } from '@mui/material';
 const commonSelectStyles = {
     "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
         border: "1px solid #484850",
@@ -18,7 +18,7 @@ const commonSelectStyles = {
         appearance: "none",
         border: "none",
         background: "transparent",
-        borderRadius:"15px"
+        borderRadius: "15px"
     },
 };
 const SearchBox = () => {
@@ -54,7 +54,7 @@ const SearchBox = () => {
                         {'Giá mỗi đêm'}
                     </FormHelperText>
                     <Select
-                        value={selectedPrice}
+                        value={selectedPrice || ""}
                         // onChange={onChange}
                         displayEmpty
                         inputProps={{ MenuProps: { disableScrollLock: true } }}
@@ -83,7 +83,7 @@ const SearchBox = () => {
                         {'Loại phòng'}
                     </FormHelperText>
                     <Select
-                        value={selectedRoomType}
+                        value={selectedRoomType || ""}
                         // onChange={onChange}
                         displayEmpty
                         inputProps={{ MenuProps: { disableScrollLock: true } }}
@@ -112,11 +112,7 @@ const SearchBox = () => {
                         {'Đánh giá'}
                     </FormHelperText>
                     <Select
-                        value={selectedRate}
-                        // onChange={onChange}
-                        displayEmpty
                         inputProps={{ MenuProps: { disableScrollLock: true } }}
-                        sx={commonSelectStyles}
                     >
                         {Constants.rate.map((option, index) => (
                             <MenuItem onClick={() => handleChangeRate(option)} key={index} value={option}>

@@ -1,6 +1,7 @@
 import HomePage from "../pages/home-page/HomePage";
 import MainLayout from "../shared/components/layout/MainLayout";
 import ResultPage from "../pages/result-page/ResultPage";
+import HotelPage from "../pages/hotel/HotelPage";
 const publicRoutes = [
     {
         path: '/',
@@ -15,6 +16,11 @@ const publicRoutes = [
     {
         path: '/searchresults',
         component: ResultPage,
+        layout: MainLayout,
+    },
+    {
+        path: '/hotel/:id',
+        component: HotelPage,
         layout: MainLayout,
     }
 ];

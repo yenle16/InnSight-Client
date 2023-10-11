@@ -1,10 +1,10 @@
 @import "../../../Common.scss";
 
 .box-wrapper {
-    overflow: hidden;
+    overflow: hidden !important;
 
     .css-1ynbdvp-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
-        border-radius: $border-radius;
+        // border-radius: $border-radius;
     }
 
     .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
@@ -16,5 +16,9 @@
         color: $textColor;
         font-weight: $font-weight-bold;
         font-size: 14px;
+    }
+
+    .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+        // border-radius: $border-radius;
     }
 }

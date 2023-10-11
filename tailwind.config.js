@@ -7,8 +7,5 @@ module.exports = {
   },
   important: '#root',
   plugins: [],
-  // corePlugins: {
-  //   preflight: false,
-  // },
 }
 
