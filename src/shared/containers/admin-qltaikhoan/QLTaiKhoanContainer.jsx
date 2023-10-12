@@ -39,24 +39,24 @@ const QLTaiKhoanContainer = () => {
         <div className="flex-grow text-right pt-1 font-bold">Tổng: {totalCount}</div>
       </div>
       <div className="flex flex-col">
-        <div className="grid grid-cols-4 rounded-sm bg-slate-400 dark:bg-slate-400 ">
-          <div className="p-2.5 xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
+        <div className="grid grid-cols-4 rounded-sm bg-cyan-900  ">
+          <div className="p-2.5 xl:p-5" >
+            <h5 className="text-white text-sm font-medium uppercase xsm:text-base">
               Mã khách hàng
             </h5>
           </div>
           <div className="p-2.5  xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
+            <h5 className="text-white text-sm font-medium uppercase xsm:text-base">
               Tên người dùng
             </h5>
           </div>
           <div className="p-2.5 xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
+            <h5 className="text-white text-sm font-medium uppercase xsm:text-base">
               Vai trò
             </h5>
           </div>
           <div className="hidden items-center p-2.5 sm:block xl:p-5">
-            <h5 className="text-sm  font-medium uppercase xsm:text-base">
+            <h5 className="text-white text-sm  font-medium uppercase xsm:text-base">
               Hành động
             </h5>
           </div>

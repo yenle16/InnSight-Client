@@ -208,24 +208,24 @@ const ThongkeContainer: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="grid grid-cols-4 rounded-sm bg-slate-400 dark:bg-slate-400 ">
+          <div className="grid grid-cols-4 rounded-sm bg-cyan-900 ">
             <div className="p-2.5 xl:p-5">
-              <h5 className="text-sm font-medium uppercase xsm:text-base">
+              <h5 className=" text-sm font-medium uppercase xsm:text-base text-white">
                 Mã KH
               </h5>
             </div>
             <div className="p-2.5  xl:p-5">
-              <h5 className="text-sm font-medium uppercase xsm:text-base">
+              <h5 className="text-sm font-medium uppercase xsm:text-base text-white">
                 Tên người dùng
               </h5>
             </div>
             <div className="p-2.5 xl:p-5">
-              <h5 className="text-sm font-medium uppercase xsm:text-base">
+              <h5 className="text-sm font-medium uppercase xsm:text-base text-white">
                 Vai trò
               </h5>
             </div>
             <div className="hidden items-center p-2.5 sm:block xl:p-5">
-              <h5 className="text-sm  font-medium uppercase xsm:text-base">
+              <h5 className="text-sm  font-medium uppercase xsm:text-base text-white">
                 Hành động
               </h5>
             </div>

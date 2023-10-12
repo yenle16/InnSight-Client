@@ -7,12 +7,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { NavLink } from 'react-router-dom';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@mui/material';
 import { message, Popconfirm } from 'antd';
 import IcDelete from '../../components/icons/qldichvu-icons/IcDelete';
 import IcUpdate from '../../components/icons/qldichvu-icons/IcUpdate';
-
+import Service from '../../components/admin-qldichvu/Service'
+import Amentity from '../../components/admin-qldichvu/Amentity'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -70,6 +70,7 @@ const QLDichVuContainer = () => {
   const [serviceCount, setServiceCount] = React.useState(1);
   const [amentityCount, setAmentityCount] = React.useState(1);
 
+
   const handleIncrementServiceCount = () => {
     setServiceCount(serviceCount + 1);
   };
@@ -78,46 +79,66 @@ const QLDichVuContainer = () => {
     setAmentityCount(amentityCount + 1);
   };
 
-  const [serviceOpen, setServiceOpen] = React.useState(false); // State for service dialog
-  const [amentityOpen, setAmentityOpen] = React.useState(false); // State for amenity dialog
-  
-  // Service
-  const handleClickOpenService = () => {
-    setServiceOpen(true);
-  };
-
-  const handleCloseService = () => {
-    setServiceOpen(false);
-  };
+  //Service 
+  const [addServiceOpen, setAddServiceOpen] = React.useState(false);
+  const [updateServiceOpen, setUpdateServiceOpen] = React.useState(false);
+  const [selectedService, setSelectedService] = React.useState(null);
 
   // add service
+  const handleOpenAddService = () => {
+    setSelectedService(null);
+    setAddServiceOpen(true);
+  };
   const handleAddService = () => {
-    setServiceOpen(false);
+    setAddServiceOpen(false);
+  };
+  const handleCloseAddService = () => {
+    setAddServiceOpen(false);
   };
 
-  // update service
+  // Update service
+  const handleOpenUpdateService = (item) => {
+    setSelectedService(item);
+    setUpdateServiceOpen(true);
+  };
   const handleUpdateService = () => {
-    setServiceOpen(false);
+    // action 
+    setUpdateServiceOpen(false);
+  };
+  const handleCloseUpdateService = () => {
+    setUpdateServiceOpen(false);
   };
 
-  // Amentity
-  const handleClickOpenAmentity = () => {
-    setAmentityOpen(true);
-  };
+  //Amentity
+  const [addAmentityOpen, setAddAmentityOpen] = React.useState(false);
+  const [updateAmentityOpen, setUpdateAmentityOpen] = React.useState(false);
+  const [selectedAmentity, setSelectedAmentity] = React.useState(null);
 
-  const handleCloseAmentity = () => {
-    setAmentityOpen(false);
+  // Add Amentity
+  const handleOpenAddAmentity = () => {
+    setSelectedAmentity(null);
+    setAddAmentityOpen(true);
   };
-
-  // add amentity
   const handleAddAmentity = () => {
-    setAmentityOpen(false);
+    setAddAmentityOpen(false);
+  };
+  const handleCloseAddAmentity = () => {
+    setAddAmentityOpen(false);
   };
 
-  // update amentity
-  const handleUpdateAmentity = () => {
-    setAmentityOpen(false);
+  // Update Amentity
+  const handleOpenUpdateAmentity = (item) => {
+    setSelectedAmentity(item);
+    setUpdateAmentityOpen(true);
   };
+  const handleUpdateAmentity = () => {
+    // action 
+    setUpdateAmentityOpen(false);
+  };
+  const handleCloseUpdateAmentity = () => {
+    setUpdateAmentityOpen(false);
+  };
+
   return (
     <div className="flex justify-between">
       <div>
@@ -141,7 +162,8 @@ const QLDichVuContainer = () => {
                   </StyledTableCell>
                   <StyledTableCell align="left">{item.name}</StyledTableCell>
                   <StyledTableCell align="left">{item.description}</StyledTableCell>
-                  <StyledTableCell align="right"><button><IcUpdate/></button></StyledTableCell>
+                  <StyledTableCell align="right" onClick={() => handleOpenUpdateService(item)}><button><IcUpdate/></button></StyledTableCell>
+                  
                   <Popconfirm
                     title="Xóa dịch vụ"
                     description="Bạn có chắc chắc muốn xóa dịch vụ này không?"
@@ -158,37 +180,26 @@ const QLDichVuContainer = () => {
                   
                 </StyledTableRow>
               ))}
+              <Service
+                open={updateServiceOpen}
+                onClose={handleCloseUpdateService}
+                onUpdateService={handleUpdateService}
+                service={selectedService}
+                setService={setSelectedService}
+              />
             </TableBody>
           </Table>
         </TableContainer>
+
         <div className='mt-3'>
-          <Button variant="outlined" onClick={handleClickOpenService}>
+          <Button variant="outlined" onClick={handleOpenAddService}>
             Thêm dịch vụ
           </Button>
-          <Dialog open={serviceOpen} onClose={handleCloseService}>
-            <DialogTitle>Thêm dịch vụ</DialogTitle>
-            <DialogContent >
-              <DialogContentText>
-              <TextField
-                  style={{ marginTop: '8px', width: '550px' }}
-                  label="Tên dịch vụ"
-                  value={service.name}
-                  // onChange={(e) => setService({ ...service, name: e.target.value })}
-                />
-                <br/>
-                <TextField
-                  style={{ marginTop: '15px', width: '550px' }}
-                  label="Mô tả"
-                  value={service.description}
-                  // onChange={(e) => setService({ ...service, description: e.target.value })}
-                />
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleCloseService}>Hủy</Button>
-              <Button onClick={handleAddService}>Thêm dịch vụ</Button>
-            </DialogActions>
-          </Dialog>
+          <Service
+            open={addServiceOpen}
+            onClose={handleCloseAddService}
+            onAddService={handleAddService}
+          />
         </div>
       </div>
 
@@ -211,9 +222,9 @@ const QLDichVuContainer = () => {
                     {amentityCount + index}
                   </StyledTableCell>
                   <StyledTableCell align="left">{item.name}</StyledTableCell>
-                  <StyledTableCell align="right"><button><IcUpdate/></button></StyledTableCell>
+                  <StyledTableCell align="right" onClick={() => handleOpenUpdateAmentity(item)}><button ><IcUpdate/></button></StyledTableCell>
                   <Popconfirm
-                    title="Xóa dịch vụ"
+                    title="Xóa tiện ích"
                     description="Bạn có chắc chắc muốn xóa tiện ích này không?"
                     onConfirm={confirm}
                     okText="Ok"
@@ -223,28 +234,26 @@ const QLDichVuContainer = () => {
                   </Popconfirm>
                 </StyledTableRow>
               ))}
+              <Amentity
+                open={updateAmentityOpen}
+                onClose={handleCloseUpdateAmentity}
+                onUpdateAmentity={handleUpdateAmentity}
+                amentity={selectedAmentity}
+                setAmentity={setSelectedAmentity}
+              />
             </TableBody>
           </Table>
         </TableContainer>
+
         <div className='mt-3'>
-          <Button variant="outlined" onClick={handleClickOpenAmentity}>
+          <Button variant="outlined" onClick={handleOpenAddAmentity}>
             Thêm tiện ích
           </Button>
-          <Dialog open={amentityOpen} onClose={handleCloseAmentity}>
-            <DialogTitle>Thêm tiện ích</DialogTitle>
-            <DialogContent>
-            <TextField
-                  style={{ marginTop: '8px', width: '550px' }}
-                  label="Tên tiện ích"
-                  value={amentity.name}
-                  // onChange={(e) => setAmentity({ ...amentity, name: e.target.value })}
-                />
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleCloseAmentity}>Hủy</Button>
-              <Button onClick={handleAddAmentity}>Thêm tiện ích</Button>
-            </DialogActions>
-          </Dialog>
+          <Amentity
+            open={addAmentityOpen}
+            onClose={handleCloseAddAmentity}
+            onAddAmentity={handleAddAmentity}
+          />
         </div>
       </div>
     </div>
