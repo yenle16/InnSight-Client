@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Selectmenu from '../../components/admin-thongke/option'
+import RevenueDate from '../../components/admin-thongke/RevenueDate'
 import RevenueMonth from '../../components/admin-thongke/RevenueMonth'
+import RevenueYear from '../../components/admin-thongke/RevenueYear';
 
 
 
 const ThongkeContainer: React.FC = () => {
-
-  const [revenue, setRevenue] = React.useState([
+  const [revenueDate, setRevenueDate] = React.useState([
     {id:'1', amount:'300000', date:'17-01-2021'},
     {id:'2', amount:'800000', date:'1-05-2022'},
     {id:'3', amount:'100000', date:'14-06-2022'},
@@ -26,11 +27,36 @@ const ThongkeContainer: React.FC = () => {
     {id:'6', amount:'700000', date:'5-10-2023'},
     {id:'7', amount:'1000000', date:'10-10-2023'},
   ]);
+  const [revenueMonth, setRevenueMonth] = React.useState([
+    {id:'1', amount:'300000', month:'01', year:'2022'},
+    {id:'2', amount:'800000', month:'02', year:'2022'},
+    {id:'3', amount:'100000', month:'03', year:'2022'},
+    {id:'4', amount:'1200000', month:'04', year:'2022'},
+    {id:'5', amount:'1300000', month:'05', year:'2022'},
+    {id:'6', amount:'500000', month:'06', year:'2022'},
+    {id:'6', amount:'800000', month:'07', year:'2022'},
+    {id:'6', amount:'700000', month:'08', year:'2022'},
+    {id:'7', amount:'1000000', month:'09', year:'2022'},
+    {id:'4', amount:'1200000', month:'10', year:'2022'},
+    {id:'5', amount:'1300000', month:'11', year:'2022'},
+    {id:'6', amount:'500000', month:'12', year:'2022'},
+    {id:'1', amount:'300000', month:'01', year:'2023'},
+    {id:'2', amount:'800000', month:'02', year:'2023'},
+    {id:'3', amount:'100000', month:'03', year:'2023'},
+    {id:'4', amount:'1200000', month:'04', year:'2023'},
+    {id:'5', amount:'1300000', month:'05', year:'2023'},
+    {id:'6', amount:'500000', month:'08', year:'2023'},
+    {id:'6', amount:'800000', month:'10', year:'2023'},
+    {id:'6', amount:'700000', month:'11', year:'2023'},
+    {id:'7', amount:'1000000', month:'12', year:'2023'},
+  ]);
 
   return (
     <>
       {/* <Selectmenu/> */}
-      <RevenueMonth revenue = {revenue}/>
+      <RevenueDate revenue = {revenueDate}/>
+      <RevenueMonth revenue = {revenueMonth}/>
+      {/* <RevenueYear revenue = {revenueYear}/> */}
       
       <div className="mt-6 rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
         <div className="flex border-b">
