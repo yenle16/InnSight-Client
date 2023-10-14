@@ -68,7 +68,7 @@ const RevenueMonth = ({ revenue }) => {
   const categories = Array.from({ length: 31 }, (_, i) => (i + 1).toString());
 
   const options = {
-    colors: ['#3C50E0'],
+    colors: ['#176CA4'],
     chart: {
       type: 'bar',
       height: 350,

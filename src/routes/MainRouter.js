@@ -7,6 +7,7 @@ import QLLoaiGiuong from "../pages/qldanhmuc/QLLoaiGiuong";
 import QLTamNhin from "../pages/qldanhmuc/QLTamNhin";
 import Thongke from "../pages/admin-thongke/Thongke";
 import Setting from "../pages/admin-setting/Setting";
+import AddAdmin from "../pages/admin-addAdmin/AddAdmin";
 const publicRoutes = [
     {
         path: '/',
@@ -51,6 +52,11 @@ const publicRoutes = [
     {
         path: '/setting',
         component: Setting,
+        layout: MainLayout,
+    },
+    {
+        path: '/addAdmin',
+        component: AddAdmin,
         layout: MainLayout,
     }
 ];

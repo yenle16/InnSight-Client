@@ -1,16 +1,25 @@
 import image from '../../../assets/images/user.png';
 import React,{ useState,useEffect } from "react";
 import IcUser from '../../components/icons/setting-icons/IcUser'
+import IcPassword from '../../components/icons/setting-icons/IcPassword'
 import IcEmail from '../../components/icons/setting-icons/IcEmail'
 import IcBiO from '../../components/icons/setting-icons/IcBiO'
 import IcUpload from '../../components/icons/setting-icons/IcUpload'
 import styles from './SettingContainer.module.scss'
 
 const SettingContainer = () => {
+  const [admin, setAdmin] = React.useState([
+    {id:'1', name:'Nguyễn Thị Thu Thuyên', phone_number:'0848137989', email:'thuyen@gmail.com', password:'123456', bio:'aaaaaaaaaaa'},
+    {id:'2', name:'Nguyễn Thị Thu Thuyên', phone_number:'0848137989', email:'thuyen@gmail.com', password:'123456', bio:'bbbbbbbbbbbbb'},
+    {id:'3', name:'Nguyễn Thị Thu Thuyên', phone_number:'0848137989', email:'thuyen@gmail.com', password:'123456', bio:'cccccccccccc'},
+    {id:'4', name:'Nguyễn Thị Thu Thuyên', phone_number:'0848137989', email:'thuyen@gmail.com', password:'123456', bio:'ddddddddd'}
+  ]);
+
+  const adminData = admin.find(item => item.id === '2');
+
   const [modalOpen, setModalOpen] = useState(false);
   const [rows, setRows] = useState(localStorage.getItem("alertSettings")?JSON.parse(localStorage.getItem("alertSettings")):[]);
   useEffect(() => {
-    // storing input name
     localStorage.setItem("alertSettings", JSON.stringify(rows));
   }, [rows]);
   const [rowToEdit, setRowToEdit] = useState(null);
@@ -21,7 +30,6 @@ const SettingContainer = () => {
 
   const handleEditRow = (idx) => {
     setRowToEdit(idx);
-
     setModalOpen(true);
   };
 
@@ -40,7 +48,6 @@ const SettingContainer = () => {
   return (
     <>
       <div className="mx-auto max-w-270">
-        
         <div className="grid grid-cols-5 gap-8">
           <div className="col-span-5 xl:col-span-3">
             <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -69,7 +76,7 @@ const SettingContainer = () => {
                           name="fullName"
                           id="fullName"
                           placeholder="Nguyễn Văn A"
-                          defaultValue="Nguyễn Thị Thu Thuyên"
+                          defaultValue={adminData.name}
                         />
                       </div>
                     </div>
@@ -86,7 +93,7 @@ const SettingContainer = () => {
                         type="text"
                         name="phoneNumber"
                         id="phoneNumber"
-                        defaultValue="0984142354"
+                        defaultValue={adminData.phone_number}
                       />
                     </div>
                   </div>
@@ -107,8 +114,8 @@ const SettingContainer = () => {
                         type="email"
                         name="emailAddress"
                         id="emailAddress"
-                        placeholder="abc@gmail.com"
-                        defaultValue="thuyen@gmail.com"
+                        defaultValue={adminData.email}
+                        readOnly= "true"
                       />
                     </div>
                   </div>
@@ -116,18 +123,23 @@ const SettingContainer = () => {
                   <div className="mb-5.5">
                     <label
                       className="mb-3 block text-sm font-medium text-black pt-3"
-                      htmlFor="Username"
+                      htmlFor="emailAddress"
                     >
-                      Username
+                      Mật khẩu
                     </label>
-                    <input
-                      className="w-full rounded border border-stroke bg-gray pl-5 py-3 px-4.5 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4  dark:focus:border-primary"
-                      type="text"
-                      name="Username"
-                      id="Username"
-                      placeholder="username"
-                      defaultValue="thuyen1705"
-                    />
+                    <div className="relative">
+                      <span className="absolute ml-2 left-4.5 top-3">
+                        <IcPassword/>
+                      </span>
+                      <input
+                        className="w-full rounded border border-stroke bg-gray py-3 pl-10 pr-4.5 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4  dark:focus:border-primary"
+                        type="password"
+                        name="password"
+                        id="password"
+                        defaultValue={adminData.password}
+                        readOnly= "true"
+                      />
+                    </div>
                   </div>
 
                   <div className="mb-5.5">
@@ -141,13 +153,13 @@ const SettingContainer = () => {
                       <span className="absolute ml-2 left-4.5 top-3">
                         <IcBiO/>
                       </span>
-
                       <textarea
                         className="w-full rounded border border-stroke bg-gray py-3 pl-10 pr-4.5 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4  dark:focus:border-primary"
                         name="bio"
                         id="bio"
                         rows={6}
                         placeholder="Bạn hãy viết gì đó ..."
+                        defaultValue={adminData.bio}
                       ></textarea>
                     </div>
                   </div>

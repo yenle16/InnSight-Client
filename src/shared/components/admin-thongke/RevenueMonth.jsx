@@ -7,7 +7,7 @@ const options = {
     position: 'top',
     horizontalAlign: 'left',
   },
-  colors: ['#3C50E0', '#80CAEE'],
+  colors: ['#74539D', '#888093'],
   chart: {
     fontFamily: 'Satoshi, sans-serif',
     height: 335,
@@ -64,7 +64,7 @@ const options = {
   markers: {
     size: 4,
     colors: '#fff',
-    strokeColors: ['#3056D3', '#80CAEE'],
+    strokeColors: ['#74539D', '#888093'],
     strokeWidth: 3,
     strokeOpacity: 0.9,
     strokeDashArray: 0,
@@ -111,7 +111,7 @@ const options = {
   },
 };
 
-const RevenueYear = ({ revenue }) => {
+const RevenueMonth = ({ revenue }) => {
   const yearOptions = Array.from(new Set(revenue.map(item => item.year)));
   const [selectedYear, setSelectedYear] = useState(yearOptions[yearOptions.length - 1]);
   const [series, setSeries] = useState([]);
@@ -174,4 +174,4 @@ const RevenueYear = ({ revenue }) => {
   );
 };
 
-export default RevenueYear;
+export default RevenueMonth;

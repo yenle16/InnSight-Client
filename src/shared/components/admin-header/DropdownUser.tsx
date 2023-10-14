@@ -2,8 +2,6 @@ import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../../assets/images/user.png';
-
-import IcAvatar from '../icons/admin-header-icons/IcAvatar';
 import IcProfile from '../icons/admin-header-icons/IcProfile';
 import IcContact from '../icons/admin-header-icons/IcContact';
 import IcSetting from '../icons/admin-header-icons/IcSetting';
@@ -14,7 +12,6 @@ const DropdownUser = () => {
     const trigger = useRef<any>(null);
     const dropdown = useRef<any>(null);
   
-    // close on click outside
     useEffect(() => {
       const clickHandler = ({ target }: MouseEvent) => {
         if (!dropdown.current) return;
@@ -30,7 +27,6 @@ const DropdownUser = () => {
       return () => document.removeEventListener('click', clickHandler);
     });
   
-    // close if the esc key is pressed
     useEffect(() => {
       const keyHandler = ({ keyCode }: KeyboardEvent) => {
         if (!dropdownOpen || keyCode !== 27) return;
@@ -70,20 +66,11 @@ const DropdownUser = () => {
           <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
             <li>
               <Link
-                to="/profile"
-                className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
-              >
-                <IcProfile/>
-                Thông tin cá nhân
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="#"
+                to="/addAdmin"
                 className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
               >
                 <IcContact/>
-                Liên hệ
+                Thêm người dùng
               </Link>
             </li>
             <li>

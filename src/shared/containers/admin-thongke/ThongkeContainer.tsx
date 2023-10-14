@@ -51,12 +51,22 @@ const ThongkeContainer: React.FC = () => {
     {id:'7', amount:'1000000', month:'12', year:'2023'},
   ]);
 
+  const [revenueYear, setRevenueYear] = React.useState([
+    {id:'1', amount:'500000', year:'2017'},
+    {id:'1', amount:'140000', year:'2018'},
+    {id:'1', amount:'700000', year:'2019'},
+    {id:'1', amount:'300000', year:'2020'},
+    {id:'1', amount:'800000', year:'2021'},
+    {id:'1', amount:'300000', year:'2022'},
+    {id:'1', amount:'2100000', year:'2023'},
+  ]);
+
   return (
     <>
       {/* <Selectmenu/> */}
       <RevenueDate revenue = {revenueDate}/>
       <RevenueMonth revenue = {revenueMonth}/>
-      {/* <RevenueYear revenue = {revenueYear}/> */}
+      <RevenueYear revenue = {revenueYear}/>
       
       <div className="mt-6 rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
         <div className="flex border-b">
