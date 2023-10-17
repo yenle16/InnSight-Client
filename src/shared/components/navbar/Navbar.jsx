@@ -40,14 +40,14 @@ const Navbar = () => {
             </nav>
 
             <div className="flex items-center md:px-4 lg:px-6 xl:px-8">
-                <button className={`py-2 px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
+                <Link to={'/sign-in'} className={`py-2 px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
                     <IcAvatar />
                     <span>Đăng nhập</span>
-                </button>
-                <button className={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
+                </Link>
+                <Link to={'sign-in'} className={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
                     <IcPencil />
                     <span>Đăng ký</span>
-                </button>
+                </Link>
             </div>
         </div>
     )

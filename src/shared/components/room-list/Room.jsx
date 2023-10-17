@@ -5,13 +5,12 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import DoneIcon from '@mui/icons-material/Done';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import PersonIcon from '@mui/icons-material/Person';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+;
 const Room = ({ room }) => {
+
   return (
     <div className={styles['room']}>
       <div className={styles['room-title']}>
@@ -78,7 +77,7 @@ const Room = ({ room }) => {
               <div className='font-bold mb-5 flex w-full justify-between'>Số lượng phòng <span>
                 <select name="" id="" className='border-2 border-solid border-gray-500 font-semibold rounded-md hover:border-gray-500 hover:outline-none'>
                   {Array.from({ length: room?.quatity || 0 }).map((_, index) => (
-                    <option>{index}</option>
+                    <option key={index}>{index}</option>
                   ))}
                 </select>
               </span>
