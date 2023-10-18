@@ -92,7 +92,6 @@ const tmpData = {
 const ResultContainer = () => {
     const [page, setPage] = useState(1);
     const handleChange = (event, value) => {
-        console.log('changed data display')
         setPage(value);
     };
     return (

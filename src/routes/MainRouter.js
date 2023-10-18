@@ -4,6 +4,8 @@ import ResultPage from "../pages/result-page/ResultPage";
 import HotelPage from "../pages/hotel/HotelPage";
 import SigninPage from "../pages/signin-page/SigninPage";
 import SinginLayout from "../shared/components/layout/SigninLayout";
+import SignupPage from "../pages/signup-page/SignupPage";
+import SettingPage from "../pages/user-settings-page/SettingPage";
 const publicRoutes = [
     {
         path: '/',
@@ -28,6 +30,16 @@ const publicRoutes = [
     {
         path: '/sign-in',
         component: SigninPage,
+        layout: SinginLayout,
+    },
+    {
+        path: '/sign-up',
+        component: SignupPage,
+        layout: SinginLayout,
+    },
+    {
+        path: '/mysettings',
+        component: SettingPage,
         layout: SinginLayout,
     }
 ];

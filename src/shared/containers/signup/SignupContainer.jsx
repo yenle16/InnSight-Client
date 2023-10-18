@@ -2,11 +2,9 @@ import React from 'react'
 import styles from './index.module.scss'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import IcGoogle from '../../components/icons/IcGoogle';
 import { useDispatch } from 'react-redux';
 import AuthAction from '../../../redux/auth/action';
-const SigninContainer = () => {
+const SignupContainer = () => {
     const dispath = useDispatch();
     const [typedEmail, setTypedEmail] = useState(false);
     const [email, setEmail] = useState("")
@@ -31,8 +29,14 @@ const SigninContainer = () => {
 
     const onSubmit = (data) => {
         dispath({
-            type: AuthAction.SIGNIN,
-            data: data
+            type: AuthAction.SIGN_UP,
+            data: data,
+            onSuccess: () => {
+                window.alert("Đăng kí thành công, mời bạn đăng nhập lại!")
+            },
+            onError : () =>{
+                window.alert("Đăng kí thất bại, xin hãy đăng kí lại")
+            }
         })
 
     }
@@ -46,7 +50,7 @@ const SigninContainer = () => {
                             (<div style={{ textAlign: "left" }}>
                                 Nhập mật khẩu của bạn
                                 <div style={{ color: "gray", fontSize: "16px", fontWeight: "300" }}>
-                                    Vui lòng nhập mật khẩu của bạn cho <span style={{ fontWeight: "700" }}>{email}</span>
+                                    Đặt mật khẩu của bạn cho <span style={{ fontWeight: "700" }}>{email}</span>
                                 </div>
                             </div>)}
                     </div>
@@ -54,7 +58,7 @@ const SigninContainer = () => {
                         {!typedEmail ?
                             (<>
                                 <label htmlFor="email">Địa chỉ Email</label>
-                                <div className='w-full mt-7 mb-7 h-20'>
+                                <div className='w-full mt-7 mb-7 h-fit'>
                                     <input
                                         type="text"
                                         id='email'
@@ -77,13 +81,21 @@ const SigninContainer = () => {
                         {typedEmail ?
                             (<>
                                 <label htmlFor="email">Mật khẩu</label>
-                                <div className='w-full mt-7 mb-7 h-20'>
+                                <div className='w-full mt-7 mb-7 h-40'>
                                     <input type="password" id='password'
+
                                         placeholder='Nhập mật khẩu'
                                         {...register("password", {
                                             required: "Không được để trống thông tin này.",
                                         })} />
                                     {errors.password && <p className="error" style={{ color: "red" }}>{errors.password.message}</p>}
+
+                                    <input type="password" id='confirmPassword'
+                                        placeholder='Nhập mật khẩu'
+                                        {...register("confirmPassword", {
+                                            required: "Không được để trống thông tin này.",
+                                        })} />
+                                    {errors.confirmPassword && <p className="error" style={{ color: "red" }}>{errors.confirmPassword.message}</p>}
                                 </div>
                                 <button type='submit'>Đăng nhập</button>
 
@@ -118,4 +130,4 @@ const SigninContainer = () => {
     )
 }
 
-export default SigninContainer
+export default SignupContainer

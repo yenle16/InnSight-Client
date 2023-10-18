@@ -110,9 +110,6 @@ export const getHotelById = async (id) => {
     return { Data: response };
 }
 export const searchHotel = ({ location, date, options }) => {
-    console.log(location)
-    console.log(date?.checkin, date?.checkout)
-    console.log(options)
     const tempData = {
         totalItems: 30,
         location: 'Đà Nẵng',
@@ -196,6 +193,9 @@ export const searchHotel = ({ location, date, options }) => {
     }
     return { Data: tempData }
 }
-export const Login = (data) => {
+export const SignIn = (data) => {
     return { Token: 'ABCToken' }
+}
+export const SignUp = (data) => {
+    return { Message: 'OK' }
 }

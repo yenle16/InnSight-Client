@@ -44,7 +44,7 @@ const Navbar = () => {
                     <IcAvatar />
                     <span>Đăng nhập</span>
                 </Link>
-                <Link to={'sign-in'} className={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
+                <Link to={'sign-up'} className={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
                     <IcPencil />
                     <span>Đăng ký</span>
                 </Link>

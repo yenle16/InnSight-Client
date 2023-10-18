@@ -2,5 +2,8 @@ const AuthAction = {
     SIGNIN: 'SIGNIN',
     SIGNIN_SUCCESS: 'SIGNIN_SUCCESS',
     SIGNIN_ERROR: 'SIGNIN_ERROR',
+    SIGN_UP: 'SIGN_UP',
+    SIGN_UP_SUCCESS: 'SIGN_UP_SUCCESS',
+    SIGN_UP_ERROR: 'SIGN_UP_ERROR',
 }
 export default AuthAction

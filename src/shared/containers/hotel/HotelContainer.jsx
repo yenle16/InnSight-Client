@@ -45,7 +45,6 @@ const HotelContainer = () => {
     const [open, setOpen] = React.useState(false);
     const [latLng, setLatLng] = useState({ lat: 0, lng: 0 });
     const { id } = useParams();
-    console.log(id)
     useEffect(() => {
         if (id) {
             dispatch({
@@ -79,8 +78,6 @@ const HotelContainer = () => {
         slidesToScroll: 1,
         autoplay: true,
     };
-
-    console.log(hotel)
     return (
         <div>
             <Header />
