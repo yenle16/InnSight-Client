@@ -38,6 +38,7 @@ export const getHotelById = async (id) => {
                 price: 696900,
                 roomImage: 'https://s3-alpha-sig.figma.com/img/62a3/8c8b/d795534912d8a246317e3f5d44c84d3b?Expires=1698624000&Signature=dbETZFyOeLtI1o4fAzmwPluhPMCiBkMxRsEBAwmOILmaXEvQfaud8HNGummJvG2Llsgj2jLn3c9ORaJFcC~eeaVxdDAEukSVJkDMNm-g6QrO-2LO0q2D4m0h-N8VJZBPW-~TJMvr3TpXqdydk~PPMH7bJLh6xXpPf-daVjC0f4-8qABot~p3aZRP~JwDeDNP~8ptfzVMmgL056vS7t3T5wcE3WyPnZcqgathpMqXIIo3RnODvGZQCAiwNc6Sg6YSH1PbqvH6DeVDZuXqpjSbMek2HbGLr2cHyrhMpHLbnOWZABHV0tVFWnZneihaEypcLHDwYThMrBEUfJ2NXd36aw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
                 adult: 2,
+                quatity: 10,
                 children: 1,
                 services: [
                     "Bãi đậu xe", "Nhận phòng nhanh", "Đã bao gồm bữa sáng", "Có thể đổi lịch"
@@ -109,7 +110,7 @@ export const getHotelById = async (id) => {
     }
     return { Data: response };
 }
-export const searchHotel = ({ location, date, options }) => {
+export const searchHotels = (filter) => {
     const tempData = {
         totalItems: 30,
         location: 'Đà Nẵng',
