@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Selectmenu from '../../components/admin-thongke/option'
+// import Selectmenu from '../../components/admin-thongke/option'
 import RevenueDate from '../../components/admin-thongke/RevenueDate'
 import RevenueMonth from '../../components/admin-thongke/RevenueMonth'
 import RevenueYear from '../../components/admin-thongke/RevenueYear';
@@ -67,45 +67,8 @@ const ThongkeContainer: React.FC = () => {
       <RevenueDate revenue = {revenueDate}/>
       <RevenueMonth revenue = {revenueMonth}/>
       <RevenueYear revenue = {revenueYear}/>
-      
-      <div className="mt-6 rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-        <div className="flex border-b">
-          <h4 className="mb-6 text-sm font-semibold text-black top-1">
-            Thống kê chi tiết
-          </h4>
-          <div className="ml-7">
-            {/* <DropdownTypeUser/> */}
-          </div>
-        </div>
-        <div className="flex flex-col">
-          <div className="grid grid-cols-4 rounded-sm bg-cyan-900 ">
-            <div className="p-2.5 xl:p-5">
-              <h5 className=" text-sm font-medium uppercase xsm:text-base text-white">
-                Mã KH
-              </h5>
-            </div>
-            <div className="p-2.5  xl:p-5">
-              <h5 className="text-sm font-medium uppercase xsm:text-base text-white">
-                Tên người dùng
-              </h5>
-            </div>
-            <div className="p-2.5 xl:p-5">
-              <h5 className="text-sm font-medium uppercase xsm:text-base text-white">
-                Vai trò
-              </h5>
-            </div>
-            <div className="hidden items-center p-2.5 sm:block xl:p-5">
-              <h5 className="text-sm  font-medium uppercase xsm:text-base text-white">
-                Hành động
-              </h5>
-            </div>
-          </div>
-          
-        </div>
-      </div>
     </>
   );
 };
 
 export default ThongkeContainer;
-// const [series, setSeries] = useState([]);
