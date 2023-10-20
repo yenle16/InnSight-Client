@@ -1,43 +1,68 @@
 import HomePage from "../pages/home-page/HomePage";
 import MainLayout from "../shared/components/layout/MainLayout";
-import RegisterHost1 from "../pages/register-1/RegisterHost1";
-import RegisterHost2 from "../pages/register-2/RegisterHost2";
-import RegisterHost3 from "../pages/register-3/RegisterHost3";
-import RegisterHomePage from "../pages/register-home-page/RegisterHomePage";
-
+import HostLayout from "../shared/components/layout/HostLayout/HostLayout";
+import ResultPage from "../pages/result-page/ResultPage";
+import HotelPage from "../pages/hotel/HotelPage";
+import RegisterHost1 from "../pages/host-pages/register-1/RegisterHost1";
+import RegisterHost2 from "../pages/host-pages/register-2/RegisterHost2";
+import RegisterHost3 from "../pages/host-pages/register-3/RegisterHost3";
+import RegisterHost4 from "../pages/host-pages/register-4/RegisterHost4";
+import RegisterHost5 from "../pages/host-pages/register-5/RegisterHost5";
+import HostRegisterHomePage from "../pages/host-pages/register-home-page/HostRegisterHomePage";
 const publicRoutes = [
-    {
-        path: '/',
-        component: HomePage,
-        layout: MainLayout,
-    },
-    {
-        path: '/home',
-        component: HomePage,
-        layout: MainLayout,
-    },
-    {
-        path: '/host',
-        component: RegisterHomePage,
-        layout: MainLayout,
-    },
-    {
-        path: '/host/register-1',
-        component: RegisterHost1,
-        layout: MainLayout,
-    },
-    {
-        path: '/host/register-2',
-        component: RegisterHost2,
-        layout: MainLayout,
-    },
-    {
-        path: '/host/register-3',
-        component: RegisterHost3,
-        layout: MainLayout,
-    },
+  {
+    path: "/",
+    component: HomePage,
+    layout: MainLayout,
+  },
+  {
+    path: "/home",
+    component: HomePage,
+    layout: MainLayout,
+  },
+  {
+    path: "/searchresults",
+    component: ResultPage,
+    layout: MainLayout,
+  },
+  {
+    path: "/hotel/:id",
+    component: HotelPage,
+    layout: MainLayout,
+  },
+  {
+    path: "/host",
+    component:HostRegisterHomePage ,
+    layout: HostLayout,
+  },
 ];
-const privateRoutes = [
+const protectedRoutes = [
+  {
+    path: "/host/register-1",
+    component: RegisterHost1,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/register-2",
+    component: RegisterHost2,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/register-3",
+    component: RegisterHost3,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/register-4",
+    component: RegisterHost4,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/register-5",
+    component: RegisterHost5,
+    layout: HostLayout,
+  },
+];
+const privateRoutes = [];
+export { publicRoutes, privateRoutes, protectedRoutes }
 
-];
-export { publicRoutes, privateRoutes }
