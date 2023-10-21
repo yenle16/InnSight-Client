@@ -41,9 +41,41 @@ const publicRoutes = [
         path: '/mysettings',
         component: SettingPage,
         layout: SinginLayout,
-    }
-];
-const privateRoutes = [
+    },
 
+  {
+    path: "/host",
+    component:HostRegisterHomePage ,
+    layout: HostLayout,
+  },
 ];
-export { publicRoutes, privateRoutes }
+const protectedRoutes = [
+  {
+    path: "/host/register-1",
+    component: RegisterHost1,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/register-2",
+    component: RegisterHost2,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/register-3",
+    component: RegisterHost3,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/register-4",
+    component: RegisterHost4,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/register-5",
+    component: RegisterHost5,
+    layout: HostLayout,
+  },
+];
+const privateRoutes = [];
+export { publicRoutes, privateRoutes, protectedRoutes }
+

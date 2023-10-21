@@ -7,12 +7,14 @@ import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+
 import useOnClickOutside from '../../../hooks/use-click-outside'
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import imgBg from '../../../assets/images/header-background.png'
 import HomeAction from '../../../redux/home/action';
 const Header = () => {
+
   const dispatch = useDispatch();
   const dateRef = useRef(null);
   const optionRef = useRef(null);
@@ -40,6 +42,7 @@ const Header = () => {
       }
     })
   }
+
   const handleSubmit = () => {
     const filter = {
       destination: destination,

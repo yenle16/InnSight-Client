@@ -17,11 +17,13 @@ const homeSlice = createSlice({
         },
         getHotel: (state, { payload }) => {
             state.hotel = payload
+
         }
     },
 
 })
 
 export const { result, getHotel } = homeSlice.actions
+
 
 export default homeSlice.reducer

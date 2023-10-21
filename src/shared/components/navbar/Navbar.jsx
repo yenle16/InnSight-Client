@@ -32,7 +32,7 @@ const Navbar = () => {
 
                     <Link
                         className={`${styles['nav-item']}`}
-                        to={'/home'}>
+                        to={'/host'}>
                         <IcGroup />
                         <span className='ml-1'>Hợp tác với chúng tôi</span>
                     </Link>
@@ -48,6 +48,7 @@ const Navbar = () => {
                     <IcPencil />
                     <span>Đăng ký</span>
                 </Link>
+
             </div>
         </div>
     )

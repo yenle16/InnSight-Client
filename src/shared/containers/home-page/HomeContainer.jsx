@@ -106,6 +106,7 @@ const HomeContainer = () => {
                     <div className={`${styles['content']}`}>
                         <div className="grid grid-cols-4 gap-4">
                             {cityFav?.map((cityItem, index) => (
+
                                 <div key={index}
                                     onClick={() => getHotelInCity(cityItem.name)}
                                     className={`${styles['grid-item-fav']} col-span-1}`}>
