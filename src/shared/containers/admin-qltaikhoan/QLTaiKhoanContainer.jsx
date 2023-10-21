@@ -5,7 +5,7 @@ import IcDelete from '../../components/icons/qltaikhoan-icons/IcDelete.jsx'
 import SelectMenu from '../../components/admin-qltaikhoan/SelectMenu.tsx'
 import styles from './QLTaiKhoanContainer.module.scss'
 import { QuestionCircleOutlined } from '@ant-design/icons';
-import { Button, Popconfirm } from 'antd';
+import { Pagination, Button, Popconfirm } from 'antd';
 
 const data = [
   { id: '1', name: 'Nguyễn Thị Thu Thuyên', role: 'Khách hàng'},
@@ -104,6 +104,7 @@ const QLTaiKhoanContainer = () => {
           </div>
         ))}
       </div>
+      <Pagination defaultCurrent={1} total={50} className="mt-3 " />;
     </div>
   );
 };

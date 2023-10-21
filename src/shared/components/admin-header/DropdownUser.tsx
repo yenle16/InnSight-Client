@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../../assets/images/user.png';
-import IcProfile from '../icons/admin-header-icons/IcProfile';
+import IcChangepw from '../icons/admin-header-icons/IcChangepw';
 import IcContact from '../icons/admin-header-icons/IcContact';
 import IcSetting from '../icons/admin-header-icons/IcSetting';
 import IcLogout from '../icons/admin-header-icons/IcLogout';
@@ -59,11 +59,11 @@ const DropdownUser = () => {
           ref={dropdown}
           onFocus={() => setDropdownOpen(true)}
           onBlur={() => setDropdownOpen(false)}
-          className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-slate-300 shadow-default dark:border-strokedark dark:bg-boxdark ${
+          className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-slate-300 shadow-default ${
             dropdownOpen === true ? 'block' : 'hidden'
           }`}
         >
-          <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
+          <ul className="flex flex-col gap-4 border-stroke px-6 py-7.5 ">
             <li>
               <Link
                 to="/addAdmin"
@@ -75,7 +75,16 @@ const DropdownUser = () => {
             </li>
             <li>
               <Link
-                to="/setting"
+                to="/admin_changepw"
+                className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+              >
+                <IcChangepw/>
+              Đổi mật khẩu
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/admin_setting"
                 className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
               >
                 <IcSetting/>

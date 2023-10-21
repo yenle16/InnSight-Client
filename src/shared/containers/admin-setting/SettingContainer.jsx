@@ -142,28 +142,6 @@ const SettingContainer = () => {
                     </div>
                   </div>
 
-                  <div className="mb-5.5">
-                    <label
-                      className="mb-3 block text-sm font-medium text-black pt-3 "
-                      htmlFor="Username"
-                    >
-                      BIO
-                    </label>
-                    <div className="relative">
-                      <span className="absolute ml-2 left-4.5 top-3">
-                        <IcBiO/>
-                      </span>
-                      <textarea
-                        className="w-full rounded border border-stroke bg-gray py-3 pl-10 pr-4.5 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4  dark:focus:border-primary"
-                        name="bio"
-                        id="bio"
-                        rows={6}
-                        placeholder="Bạn hãy viết gì đó ..."
-                        defaultValue={adminData.bio}
-                      ></textarea>
-                    </div>
-                  </div>
-
                   <div className="flex justify-end gap-4.5">
                     <button
                       className="flex justify-center rounded border-red-800 border border-stroke py-2 px-6 font-medium text-black hover:shadow-1 dark:border-strokedark "

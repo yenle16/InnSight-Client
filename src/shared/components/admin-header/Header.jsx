@@ -3,11 +3,11 @@ import IcSearch from '../icons/admin-header-icons/IcSearch'
 import DropdownUser from './DropdownUser.tsx';
 const Header = () => {
   return (
-    <header className="sticky top-0 z-999 flex w-full border bg-slate-300 drop-shadow-1 dark:bg-slate-300 dark:drop-shadow-none">
+    <header className="sticky top-0 flex w-full border bg-slate-300 drop-shadow-1 dark:bg-slate-300 dark:drop-shadow-none z-50">
       <div className="flex flex-grow items-center justify-between py-4 px-4 shadow-2 md:px-6 2xl:px-11">
 
         <div className=" sm:block">
-          <form action="https://formbold.com/s/unique_form_id" method="POST">
+          <form action="" method="POST">
             <div className="relative">
               <button className="absolute top-1/2 left-0 -translate-y-1/2">
                 <IcSearch />
