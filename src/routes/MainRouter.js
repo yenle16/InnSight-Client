@@ -1,4 +1,8 @@
+import HomePage from "../pages/home-page/HomePage";
 import MainLayout from "../shared/components/layout/MainLayout";
+import MainLayoutAdmin from "../shared/components/layout/MainLayoutAdmin";
+import ResultPage from "../pages/result-page/ResultPage";
+import HotelPage from "../pages/hotel/HotelPage";
 import QLTaiKhoan from "../pages/qltaikhoan/QLTaiKhoan";
 import DetailUser from "../pages/qltaikhoan/DetailUser";
 import QLDichVu from "../pages/qldichvu/QLDichVu";
@@ -11,52 +15,77 @@ import AddAdmin from "../pages/admin-addAdmin/AddAdmin";
 const publicRoutes = [
     {
         path: '/',
-        component: QLTaiKhoan,
+        component: HomePage,
         layout: MainLayout,
+    },
+    {
+        path: '/admin',
+        component: QLTaiKhoan,
+        layout: MainLayoutAdmin,
     },
     {
         path: '/qltaikhoan',
         component: QLTaiKhoan,
-        layout: MainLayout,
+        layout: MainLayoutAdmin,
     },
     {
         path: '/qltaikhoan/detail',
         component: DetailUser,
-        layout: MainLayout,
+        layout: MainLayoutAdmin,
     },
     {
         path: '/qldichvu',
         component: QLDichVu,
-        layout: MainLayout,
+        layout: MainLayoutAdmin,
     },
     {
         path: '/qldanhmuc/loai_phong',
         component: QLLoaiPhong,
-        layout: MainLayout,
+        layout: MainLayoutAdmin,
     },
     {
         path: '/qldanhmuc/loai_giuong',
         component: QLLoaiGiuong,
-        layout: MainLayout,
+        layout: MainLayoutAdmin,
     },
     {
         path: '/qldanhmuc/tam_nhin',
         component: QLTamNhin,
-        layout: MainLayout,
+        layout: MainLayoutAdmin,
     },
     {
         path: '/thongke',
         component: Thongke,
-        layout: MainLayout,
+        layout: MainLayoutAdmin,
     },
     {
         path: '/setting',
         component: Setting,
-        layout: MainLayout,
+        layout: MainLayoutAdmin,
     },
     {
         path: '/addAdmin',
         component: AddAdmin,
+        layout: MainLayoutAdmin,
+    },
+    {
+        path: '/searchresults',
+        component: ResultPage,
+        layout: MainLayout,
+    },
+    {
+        path: '/hotel/:id',
+        component: HotelPage,
+        layout: MainLayout,
+    },
+    {
+        path: '/searchresults',
+        component: ResultPage,
+        layout: MainLayout,
+    },
+    {
+        path: '/hotel/:id',
+        component: HotelPage,
         layout: MainLayout,
     }
 ];

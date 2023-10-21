@@ -5,7 +5,6 @@ import { publicRoutes } from './routes/MainRouter';
 import initStore from './redux/store';
 import "./Common.scss";
 const store = initStore()
-
 function App() {
   return (
     <Provider store={store}>
