@@ -157,4 +157,3 @@ const protectedRoutes = [
 ];
 const privateRoutes = [];
 export { publicRoutes, privateRoutes, protectedRoutes }
-
