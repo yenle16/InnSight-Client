@@ -14,45 +14,40 @@ import RegisterHost4 from "../pages/host-pages/register-4/RegisterHost4";
 import RegisterHost5 from "../pages/host-pages/register-5/RegisterHost5";
 import HostRegisterHomePage from "../pages/host-pages/register-home-page/HostRegisterHomePage";
 const publicRoutes = [
-    {
-        path: '/',
-        component: HomePage,
-        layout: MainLayout,
-    },
-    {
-        path: '/home',
-        component: HomePage,
-        layout: MainLayout,
-    },
-    {
-        path: '/searchresults',
-        component: ResultPage,
-        layout: MainLayout,
-    },
-    {
-        path: '/hotel/:id',
-        component: HotelPage,
-        layout: MainLayout,
-    },
-    {
-        path: '/sign-in',
-        component: SigninPage,
-        layout: SinginLayout,
-    },
-    {
-        path: '/sign-up',
-        component: SignupPage,
-        layout: SinginLayout,
-    },
-    {
-        path: '/mysettings',
-        component: SettingPage,
-        layout: SinginLayout,
-    },
+  {
+    path: '/',
+    component: HomePage,
+    layout: MainLayout,
+  },
+  {
+    path: '/home',
+    component: HomePage,
+    layout: MainLayout,
+  },
+  {
+    path: '/searchresults',
+    component: ResultPage,
+    layout: MainLayout,
+  },
+  {
+    path: '/hotel/:id',
+    component: HotelPage,
+    layout: MainLayout,
+  },
+  {
+    path: '/sign-in',
+    component: SigninPage,
+    layout: SinginLayout,
+  },
+  {
+    path: '/sign-up',
+    component: SignupPage,
+    layout: SinginLayout,
+  },
 
   {
     path: "/host",
-    component:HostRegisterHomePage ,
+    component: HostRegisterHomePage,
     layout: HostLayout,
   },
 ];
@@ -81,6 +76,11 @@ const protectedRoutes = [
     path: "/host/register-5",
     component: RegisterHost5,
     layout: HostLayout,
+  },
+  {
+    path: '/mysettings',
+    component: SettingPage,
+    layout: SinginLayout,
   },
 ];
 const privateRoutes = [];
