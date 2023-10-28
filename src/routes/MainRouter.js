@@ -15,45 +15,45 @@ const RegisterHost3 = lazy(() => import('../pages/host-pages/register-3/Register
 const RegisterHost4 = lazy(() => import('../pages/host-pages/register-4/RegisterHost4'))
 const RegisterHost5 = lazy(() => import('../pages/host-pages/register-5/RegisterHost5'))
 const publicRoutes = [
-  {
-    path: '/',
-    component: HomePage,
-    layout: MainLayout,
-  },
-  {
-    path: '/home',
-    component: HomePage,
-    layout: MainLayout,
-  },
-  {
-    path: '/searchresults',
-    component: ResultPage,
-    layout: MainLayout,
-  },
-  {
-    path: '/hotel/:id',
-    component: HotelPage,
-    layout: MainLayout,
-  },
-  {
-    path: '/sign-in',
-    component: SigninPage,
-    layout: SinginLayout,
-  },
-  {
-    path: '/sign-up',
-    component: SignupPage,
-    layout: SinginLayout,
-  },
-  {
-    path: '/mysettings',
-    component: SettingPage,
-    layout: SinginLayout,
-  },
+    {
+        path: '/',
+        component: HomePage,
+        layout: MainLayout,
+    },
+    {
+        path: '/home',
+        component: HomePage,
+        layout: MainLayout,
+    },
+    {
+        path: '/searchresults',
+        component: ResultPage,
+        layout: MainLayout,
+    },
+    {
+        path: '/hotel/:id',
+        component: HotelPage,
+        layout: MainLayout,
+    },
+    {
+        path: '/sign-in',
+        component: SigninPage,
+        layout: SinginLayout,
+    },
+    {
+        path: '/sign-up',
+        component: SignupPage,
+        layout: SinginLayout,
+    },
+    {
+        path: '/mysettings',
+        component: SettingPage,
+        layout: SinginLayout,
+    },
 
   {
     path: "/host",
-    component: HostRegisterHomePage,
+    component:HostRegisterHomePage ,
     layout: HostLayout,
   },
 ];
@@ -82,6 +82,11 @@ const protectedRoutes = [
     path: "/host/register-5",
     component: RegisterHost5,
     layout: HostLayout,
+  },
+  {
+    path: '/mysettings',
+    component: SettingPage,
+    layout: SinginLayout,
   },
 ];
 const privateRoutes = [];
