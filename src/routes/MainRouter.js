@@ -1,58 +1,59 @@
-import HomePage from "../pages/home-page/HomePage";
 import MainLayout from "../shared/components/layout/MainLayout";
 import HostLayout from "../shared/components/layout/HostLayout/HostLayout";
-import ResultPage from "../pages/result-page/ResultPage";
-import HotelPage from "../pages/hotel/HotelPage";
-import SigninPage from "../pages/signin-page/SigninPage";
 import SinginLayout from "../shared/components/layout/SigninLayout";
-import SignupPage from "../pages/signup-page/SignupPage";
-import SettingPage from "../pages/user-settings-page/SettingPage";
-import RegisterHost1 from "../pages/host-pages/register-1/RegisterHost1";
-import RegisterHost2 from "../pages/host-pages/register-2/RegisterHost2";
-import RegisterHost3 from "../pages/host-pages/register-3/RegisterHost3";
-import RegisterHost4 from "../pages/host-pages/register-4/RegisterHost4";
-import RegisterHost5 from "../pages/host-pages/register-5/RegisterHost5";
 import HostRegisterHomePage from "../pages/host-pages/register-home-page/HostRegisterHomePage";
+import { lazy } from 'react';
+const HomePage = lazy(() => import('../pages/home-page/HomePage'))
+const ResultPage = lazy(() => import('../pages/result-page/ResultPage'))
+const HotelPage = lazy(() => import('../pages/hotel/HotelPage'))
+const SigninPage = lazy(() => import('../pages/signin-page/SigninPage'))
+const SignupPage = lazy(() => import('../pages/signup-page/SignupPage'))
+const SettingPage = lazy(() => import('../pages/user-settings-page/SettingPage'))
+const RegisterHost1 = lazy(() => import('../pages/host-pages/register-1/RegisterHost1'))
+const RegisterHost2 = lazy(() => import('../pages/host-pages/register-2/RegisterHost2'))
+const RegisterHost3 = lazy(() => import('../pages/host-pages/register-3/RegisterHost3'))
+const RegisterHost4 = lazy(() => import('../pages/host-pages/register-4/RegisterHost4'))
+const RegisterHost5 = lazy(() => import('../pages/host-pages/register-5/RegisterHost5'))
 const publicRoutes = [
-    {
-        path: '/',
-        component: HomePage,
-        layout: MainLayout,
-    },
-    {
-        path: '/home',
-        component: HomePage,
-        layout: MainLayout,
-    },
-    {
-        path: '/searchresults',
-        component: ResultPage,
-        layout: MainLayout,
-    },
-    {
-        path: '/hotel/:id',
-        component: HotelPage,
-        layout: MainLayout,
-    },
-    {
-        path: '/sign-in',
-        component: SigninPage,
-        layout: SinginLayout,
-    },
-    {
-        path: '/sign-up',
-        component: SignupPage,
-        layout: SinginLayout,
-    },
-    {
-        path: '/mysettings',
-        component: SettingPage,
-        layout: SinginLayout,
-    },
+  {
+    path: '/',
+    component: HomePage,
+    layout: MainLayout,
+  },
+  {
+    path: '/home',
+    component: HomePage,
+    layout: MainLayout,
+  },
+  {
+    path: '/searchresults',
+    component: ResultPage,
+    layout: MainLayout,
+  },
+  {
+    path: '/hotel/:id',
+    component: HotelPage,
+    layout: MainLayout,
+  },
+  {
+    path: '/sign-in',
+    component: SigninPage,
+    layout: SinginLayout,
+  },
+  {
+    path: '/sign-up',
+    component: SignupPage,
+    layout: SinginLayout,
+  },
+  {
+    path: '/mysettings',
+    component: SettingPage,
+    layout: SinginLayout,
+  },
 
   {
     path: "/host",
-    component:HostRegisterHomePage ,
+    component: HostRegisterHomePage,
     layout: HostLayout,
   },
 ];
