@@ -4,8 +4,8 @@ import HostLayout from "../shared/components/layout/HostLayout/HostLayout";
 import ResultPage from "../pages/result-page/ResultPage";
 import HotelPage from "../pages/hotel/HotelPage";
 import SigninPage from "../pages/signin-page/SigninPage";
-import SinginLayout from "../shared/components/layout/SigninLayout";
-import SignupPage from "../pages/signup-page/SignupPage";
+import SigninLayout from "../shared/components/layout/SigninLayout";
+import SignupPage from "../pages/signup-page/SignupPage"; 
 import SettingPage from "../pages/user-settings-page/SettingPage";
 import RegisterHost1 from "../pages/host-pages/register-1/RegisterHost1";
 import RegisterHost2 from "../pages/host-pages/register-2/RegisterHost2";
@@ -13,6 +13,11 @@ import RegisterHost3 from "../pages/host-pages/register-3/RegisterHost3";
 import RegisterHost4 from "../pages/host-pages/register-4/RegisterHost4";
 import RegisterHost5 from "../pages/host-pages/register-5/RegisterHost5";
 import HostRegisterHomePage from "../pages/host-pages/register-home-page/HostRegisterHomePage";
+import RegisterListSection from "../pages/host-pages/register-list-section/RegisterListSection";
+import AddRoom from "../pages/host-pages/add-room/AddRoom";
+import AddRoomPrice from "../pages/host-pages/add-room-price/AddRoomPrice";
+import AddCancelPolicy from "../pages/host-pages/add-cancel-policy/AddCancelPolicy";
+
 const publicRoutes = [
     {
         path: '/',
@@ -37,17 +42,17 @@ const publicRoutes = [
     {
         path: '/sign-in',
         component: SigninPage,
-        layout: SinginLayout,
+        layout: SigninLayout,
     },
     {
         path: '/sign-up',
         component: SignupPage,
-        layout: SinginLayout,
+        layout: SigninLayout,
     },
     {
         path: '/mysettings',
         component: SettingPage,
-        layout: SinginLayout,
+        layout: SigninLayout,
     },
 
   {
@@ -80,6 +85,26 @@ const protectedRoutes = [
   {
     path: "/host/register-5",
     component: RegisterHost5,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/register-list-section",
+    component: RegisterListSection,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/add-room",
+    component: AddRoom,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/add-room-price",
+    component: AddRoomPrice,
+    layout: HostLayout,
+  },
+  {
+    path: "/host/add-cancel-policy",
+    component: AddCancelPolicy,
     layout: HostLayout,
   },
 ];
