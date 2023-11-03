@@ -7,6 +7,7 @@ import IcGroup from '../icons/header-icons/IcGroup'
 import IcAvatar from '../icons/header-icons/IcAvatar'
 import IcPencil from '../icons/header-icons/IcPencil'
 const Navbar = () => {
+    const currentUser = true;
     return (
         <div className={`hidden lg:flex  ${styles['navbar']}`}>
             <Link
@@ -41,16 +42,29 @@ const Navbar = () => {
             </nav>
 
             <div className="flex items-center md:px-4 lg:px-6 xl:px-8">
-
-                <Link to={'/sign-in'} className={`py-2 px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
-                    <IcAvatar />
-                    <span>Đăng nhập</span>
-                </Link>
-                <Link to={'sign-up'} className={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
-                    <IcPencil />
-                    <span>Đăng ký</span>
-                </Link>
-
+                {currentUser ? (
+                    <>
+                        <div className="pr-10">
+                        <button
+                            class={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles["button-account"]}`}
+                        >
+                            <IcAvatar />
+                            <span>Tài khoản của bạn</span>
+                        </button>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <Link to={'/sign-in'} className={`py-2 px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
+                            <IcAvatar />
+                            <span>Đăng nhập</span>
+                        </Link>
+                        <Link to={'sign-up'} className={`sm:py-2 sm:px-4 drop-shadow-md inline-flex items-center justify-between ${styles['navbar-button']}`}>
+                            <IcPencil />
+                            <span>Đăng ký</span>
+                        </Link>
+                    </>
+                )}
             </div>
         </div>
     )

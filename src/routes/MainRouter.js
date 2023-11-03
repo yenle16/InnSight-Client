@@ -24,6 +24,10 @@ import Thongke from "../pages/admin-thongke/Thongke";
 import Setting from "../pages/admin-setting/Setting";
 import AddAdmin from "../pages/admin-addAdmin/AddAdmin";
 import Changepw from "../pages/admin-ChangePW/Changepw";
+import Cancel1 from "../pages/cancel/Cancel1";
+import Cancel2 from "../pages/cancel/Cancel2";
+import Cancel3 from "../pages/cancel/Cancel3";
+import Cancel4 from "../pages/cancel/Cancel4";
 const publicRoutes = [
     {
         path: '/',
@@ -35,11 +39,6 @@ const publicRoutes = [
         component: QLTaiKhoan,
         layout: MainLayoutAdmin,
     },
-    // {
-    //     path: '/qltaikhoan',
-    //     component: QLTaiKhoan,
-    //     layout: MainLayoutAdmin,
-    // },
     {
         path: '/qltaikhoan/detail',
         component: DetailUser,
@@ -119,7 +118,27 @@ const publicRoutes = [
     {
         path: '/mysettings',
         component: SettingPage,
-        layout: SinginLayout,
+        layout: MainLayout,
+    },
+    {
+        path: '/cancel/1',
+        component: Cancel1,
+        layout: MainLayout,
+    },
+    {
+        path: '/cancel/2',
+        component: Cancel2,
+        layout: MainLayout,
+    },
+    {
+        path: '/cancel/3',
+        component: Cancel3,
+        layout: MainLayout,
+    },
+    {
+        path: '/cancel/4',
+        component: Cancel4,
+        layout: MainLayout,
     },
 
   {
