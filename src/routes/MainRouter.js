@@ -1,6 +1,7 @@
 import MainLayout from "../shared/components/layout/MainLayout";
 import HostLayout from "../shared/components/layout/HostLayout/HostLayout";
 import SinginLayout from "../shared/components/layout/SigninLayout";
+import BookingLayout from "../shared/components/layout/booking-layout/BookingLayout";
 import HostRegisterHomePage from "../pages/host-pages/register-home-page/HostRegisterHomePage";
 import { lazy } from 'react';
 const HomePage = lazy(() => import('../pages/home-page/HomePage'))
@@ -14,47 +15,60 @@ const RegisterHost2 = lazy(() => import('../pages/host-pages/register-2/Register
 const RegisterHost3 = lazy(() => import('../pages/host-pages/register-3/RegisterHost3'))
 const RegisterHost4 = lazy(() => import('../pages/host-pages/register-4/RegisterHost4'))
 const RegisterHost5 = lazy(() => import('../pages/host-pages/register-5/RegisterHost5'))
+const BookingPage = lazy(() => import('../pages/booking-pages/BookingPage1'))
+const BookingPage2 = lazy(() => import('../pages/booking-pages/BookingPage2'))
+
 const publicRoutes = [
-    {
-        path: '/',
-        component: HomePage,
-        layout: MainLayout,
-    },
-    {
-        path: '/home',
-        component: HomePage,
-        layout: MainLayout,
-    },
-    {
-        path: '/searchresults',
-        component: ResultPage,
-        layout: MainLayout,
-    },
-    {
-        path: '/hotel/:id',
-        component: HotelPage,
-        layout: MainLayout,
-    },
-    {
-        path: '/sign-in',
-        component: SigninPage,
-        layout: SinginLayout,
-    },
-    {
-        path: '/sign-up',
-        component: SignupPage,
-        layout: SinginLayout,
-    },
-    {
-        path: '/mysettings',
-        component: SettingPage,
-        layout: SinginLayout,
-    },
+  {
+    path: '/',
+    component: HomePage,
+    layout: MainLayout,
+  },
+  {
+    path: '/home',
+    component: HomePage,
+    layout: MainLayout,
+  },
+  {
+    path: '/searchresults',
+    component: ResultPage,
+    layout: MainLayout,
+  },
+  {
+    path: '/hotel/:id',
+    component: HotelPage,
+    layout: MainLayout,
+  },
+  {
+    path: '/sign-in',
+    component: SigninPage,
+    layout: SinginLayout,
+  },
+  {
+    path: '/sign-up',
+    component: SignupPage,
+    layout: SinginLayout,
+  },
+  {
+    path: '/mysettings',
+    component: SettingPage,
+    layout: SinginLayout,
+  },
 
   {
     path: "/host",
-    component:HostRegisterHomePage ,
+    component: HostRegisterHomePage,
     layout: HostLayout,
+  },
+  {
+    path: '/book',
+    component: BookingPage,
+    layout: BookingLayout,
+  },
+  {
+    path: '/book/check',
+    component: BookingPage2,
+    layout: BookingLayout,
   },
 ];
 const protectedRoutes = [
